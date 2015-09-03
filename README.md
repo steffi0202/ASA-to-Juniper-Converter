@@ -10,3 +10,5 @@ access-list CONCENT-INSIDE remark USA test, 2013-06-04
 access-list CONCENT-INSIDE extended permit tcp object N_BW_192.168.179.0-24 object H_USA-1 object-group S_WEB
 
 press the Button "Durchsuchen" and add the txt file. Press "Umwandeln". 
+
+Note: ASA Cryptomaps will convert as a normal SRX security policy
