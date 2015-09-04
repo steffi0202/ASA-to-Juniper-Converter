@@ -24,6 +24,7 @@ public class Input {
 		space8=zeile.indexOf(" ", space7+1);
 	}
 	
+	
 	public static String home = System.getProperty("user.home");
 	
 	public static void convertieren() throws IOException
@@ -38,7 +39,7 @@ public class Input {
 	    String zeile ="";
 	    String policy ="set security policies from zone trust to zone untrust policy";
 	    
-	    //eine Zeile inlesen und in der variablen zeile speichern
+	    //eine Zeile enlesen und in der variablen zeile speichern
 	    zeile = reader.readLine();
 	    
 	    //schleife läuft solange wie zeile nicht null ist
@@ -50,6 +51,10 @@ public class Input {
 	    		if(zeile.contains("object")){
 	    		zeile=zeile.replace(" object-group","");
 	    		zeile=zeile.replace(" object","");
+	    		}
+	    		
+	    		if(zeile.contains("eq")){
+	    			zeile=zeile.replace("eq","");
 	    		}
 	    		
 	    		//stelle Leerzeichen festlegen
@@ -117,8 +122,8 @@ public class Input {
 		    	    	writer.write(policy + i + " match application junos-echo" + "\n");
 
 	    				}else{
-	    					System.out.println(policy + i + " match application" + appNew.trim());
-	    	    	    	writer.write(policy + i + " match application" + appNew.trim() + "\n");
+	    					System.out.println(policy + i + " match application " + appNew.trim());
+	    	    	    	writer.write(policy + i + " match application " + appNew.trim() + "\n");
 
 	    				}
 	    			}
