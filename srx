@@ -1,0 +1,8 @@
+access-list outside_access_in extended permit tcp object-group DM_INLINE_NETWORK_17 host 172.19.52.32 eq ssh inactive 
+access-list outside_access_in extended permit object-group DM_INLINE_SERVICE_8 object-group TSG-KVM-Access host KVM_NAT 
+access-list outside_access_in extended permit object-group DM_INLINE_SERVICE_10 object-group DM_INLINE_NETWORK_11 host WSUS_NAT 
+access-list outside_access_in extended permit ip any any inactive 
+access-list outside_access_in extended permit object-group TCPUDP host DMZ_Server host Domain_NAT object-group FDCS_Services inactive 
+access-list outside_access_in extended permit object-group TCPUDP host DMZ_Server host WSUS_NAT object-group WSUS-Service inactive 
+access-list outside_access_in extended permit object-group DM_INLINE_SERVICE_4 any object-group DM_INLINE_NETWORK_1 
+access-list outside_access_in extended permit object-group DM_INLINE_SERVICE_6 object-group DM_INLINE_NETWORK_8 any 
